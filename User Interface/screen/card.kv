@@ -1,0 +1,32 @@
+<CardScreen>:
+    Button:
+        size_hint: (None, None)
+        size: (300, 300)  # Set the size of the button to 300x100 pixels
+        pos_hint: {'center_x': 0.3,'top':1.5}
+        padding: 20 # Add padding around the text (left, top, right, bottom)
+        background_normal: 'image/student_login.jpg'  # Path to the image for normal state
+        on_release: app.goto_login_screen()
+        text: "Login as a Student"
+        font_size: 20
+        spacing:"20dp"
+        bold: True
+        halign: 'center'
+        valign: 'bottom'
+        color: 0, 0, 0, 1  # Red color
+        text_size: self.size  # Limit text area to the size of the button
+
+    Button:
+        text: "Login as a Teacher "
+        size_hint: (None, None)
+        size: (300, 300)  # Set the size of the button to 300x100 pixels
+        pos_hint: {'center_x': 0.7,'top':1.5}
+        padding: 20
+        background_normal: 'image/teacher.png'  # Path to the image for normal state
+        font_size: 20
+        text_color: 1, 1, 1, 1  # White text color
+        on_release: app.goto_teacher_login_screen()
+        halign: 'center'
+        valign: 'bottom'
+        color: 0, 0, 0, 1  # Red color
+        text_size: self.size  # Limit text area to the size of the button
+        bold: True

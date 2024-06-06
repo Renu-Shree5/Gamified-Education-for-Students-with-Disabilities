@@ -1,0 +1,32 @@
+<AboutUs>:
+    BoxLayout:
+        Image:
+            source: 'image/aboutus.jpg'
+            allow_stretch: True
+            keep_ratio: False
+    
+    MDLabel:
+        text: "About Us"
+        font_style: 'Subtitle1'
+        italic: True
+        bold: True
+        font_size: 60
+        halign: 'left'
+        theme_text_color: "Custom"
+        text_color: "#FFFFFF"
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": .95, "top": 0.9}  # Adjusted positioning
+    
+    
+    MDLabel:
+        text: ' We are thrilled to share some exciting developments about our app, which is poised to revolutionize special education through the power of gamification. Our team is hard at work developing a gamified platform specifically designed for students with hearing and vision disabilities, aiming to bridge the educational gap and empower exceptional learners. At the heart of our app is the concept of coding for inclusion. By leveraging cutting-edge technologies, we are breaking down barriers and providing students with disabilities the opportunity to engage with coding in an accessible and enjoyable way. What sets us apart is our commitment to measuring long-term effects beyond mere scores. We are dedicated to understanding how our gamified approach impacts students overall learning experiences and educational outcomes over time. This allows us to continually refine our platform and ensure it meets the diverse needs of students with disabilities. But our journey does not stop there. We understand the importance of collaboration and stakeholder involvement. That is why we are working closely with educators, parents, and the wider community to ensure that our app is truly inclusive and addresses the unique challenges faced by students with disabilities. We are incredibly excited about the potential of our app to transform special education. With your support, we are paving the way for a future where every student, regardless of ability, has access to engaging and effective learning experiences. Thank you for joining us on this journey of innovation and inclusion.'
+        font_style: 'Subtitle1'
+        font_size: 21
+        halign: 'justify'
+        #valign: 'bottom'
+        theme_text_color: "Custom"
+        text_color: "#FFFFFF"
+        size_hint_y: None
+        pos_hint: {"center_x": .5, "top": 0.6}  # Adjusted positioning
+        padding: ('300dp', '30dp', '300dp', '10dp')

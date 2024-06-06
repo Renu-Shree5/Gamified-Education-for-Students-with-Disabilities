@@ -1,0 +1,43 @@
+<LeaderboardScreen>:
+
+    name: 'leaderboard'
+
+    # Define the layout for the LeaderboardScreen
+    MDCard:
+        size_hint: None, None
+        size: dp(400), dp(400)
+        pos_hint: {"center_x": .5, "top": 0.90}  # Move the MDCard to the top
+        md_bg_color: 0.3429, 0.0606, 0.0371, 1 
+
+        BoxLayout:
+            id: layout  # Add id here
+            orientation: 'vertical'
+            spacing: dp(10)
+            padding: dp(10), dp(10)
+
+            MDLabel:
+                text: 'USERNAME                     SCORE'
+                halign: 'center'
+                size_hint_y: None
+                height: self.texture_size[1]
+                pos_hint: {"center_x": .6, "top": 1.0}  # Position at the top of the MDCard
+                theme_text_color: "Custom"
+                text_color: "#FFFFFF"
+                bold: True
+
+            ScrollView:  # Add ScrollView for the dynamic content
+                GridLayout:
+                    id: grid_layout
+                    cols: 2  # Two columns for username and score
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+                    # Back button to navigate back to IconScreen
+             # Back button to navigate back to IconScreen
+    MDIconButton:
+        icon:"icons/back.png"
+        pos_hint: {"left": 0.0, "bottom": 0.10}  # Position at the top right of the page   
+        user_font_size: "128sp"  # Increased icon size
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1  # White text color
+        on_release:app.show_leaderboard_screen()

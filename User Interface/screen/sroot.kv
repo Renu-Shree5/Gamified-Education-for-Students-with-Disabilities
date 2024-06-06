@@ -1,0 +1,45 @@
+
+<IconScreen>:
+    
+    MDBottomNavigation:
+        id: bottom_nav
+        theme_text_color: 'Custom'  # Specify custom theme text color
+        text_color_active: 0, 0.7, 0.7, 1  # Active text color
+        text_color_normal: 0, 0, 0, 1  # Black text color
+        background_color: 0.1, 0.2, 0.3, 1  # Example color (adjust as needed)
+        panel_color: 0.6667, 0.8392, 0.9255, 1 
+        selected_color_background: "darkblue"
+        text_color_active: "lightgrey"
+        MDBottomNavigationItem:
+            name: "Home"
+            text: "Home"
+            icon: "home"
+            StudentHome:
+        MDBottomNavigationItem:
+            name: "signin"
+            icon: "login"
+            text:"Login"
+            NavtoLoginScreen:
+        MDBottomNavigationItem:
+            name: "Sign Up"
+            icon: "icons/user.png"
+            text:"Sign Up"
+            NavtoSignUpScreen:
+        MDBottomNavigationItem:
+            name: "LeaderBoard"
+            icon: "icons/competition.png"
+            text: "LeaderBoard"
+            on_tab_press: app.show_leaderboard_screen()
+            #LeaderboardScreen:
+        MDBottomNavigationItem:
+            name: "About"
+            icon: "information"
+            text:"About"
+            AboutUs:
+            
+        MDBottomNavigationItem:
+            name: "Profile"
+            icon: "account"
+            text: "Profile"
+
+        

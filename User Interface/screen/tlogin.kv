@@ -1,0 +1,90 @@
+#creating the screen
+<TeacherLoginScreen>:
+    id: user_type
+    FloatLayout:
+        canvas:
+            Rectangle:
+                source: 'image\signin.jpg'  # Set the path to your image file
+                size: self.width, self.height  # Set the size to match the screen size
+                pos: self.x, self.y  # Position the image at the bottom-left corner to cover the entire screen
+                
+        MDLabel:
+            text: 'NeuroNex'
+            font_style: 'Subtitle1'
+            italic: True  # Italicize the text 
+            font_size: 60
+            halign: 'center'
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint: {"center_x": .5, "top": 0.90}  # Position at the top of the page
+
+    MDCard:
+        size_hint: None,None
+        size: 500,500
+        pos_hint: {"center_x":.5,"center_y":.5}
+        md_bg_color: [152/255, 49/255, 203/255, 1]
+        padding: 20
+        spacing: 30
+        orientation: 'vertical'
+        # Adding item to the card
+
+        MDLabel:
+            text: 'LOGIN'
+            font_style:'Button'
+            font_size:40
+            halign:'center'
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            size_hint_y:None
+            height:self.texture_size[1]
+
+        MDTextField:
+            id:email_input
+            hint_text:"Username"
+            icon_right:"account"
+            size_hint_x:None
+            width:400
+            font_size:25
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            pos_hint: {"center_x":.5,"center_y":.3}
+            background_color: [1, 1, 1, 0]  # Set transparent background color
+            helper_text: "Enter your email"
+            helper_text_mode: "on_focus"
+
+        MDTextField:
+            id:password_input
+            hint_text:"Password"
+            icon_right:"eye-off"
+            size_hint_x:None
+            width:400
+            font_size:25
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            pos_hint: {"center_x":.5,"center_y":.5}
+            helper_text: "Enter your password"
+            helper_text_mode: "on_focus"
+            password: True
+        
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+            Label:
+                text: "Don't have an account? [ref=Sign_up][color=#000FF]SIGN UP[/color][/ref]"
+                markup: True
+                on_ref_press: app.on_hyperlink_press(self.text)
+
+
+        MDRoundFlatButton:
+            text: "Login"
+            pos_hint: {'center_x': 0.5}
+            size_hint: None, None
+            on_release: app.login_teacher_user(email_input.text, password_input.text)  # Call login_teacher_user
+
+        Label:
+            id: registration_message  # This is the label to display the error message
+            text: ""
+            color: 1, 0, 0, 1  # Red color for the error message
+

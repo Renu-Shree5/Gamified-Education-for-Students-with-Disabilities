@@ -1,0 +1,66 @@
+<StudentHome>:
+    FloatLayout:
+        Image:
+            source: 'image/boy.png'  # Replace 'path_to_image_home.png' with the path to your home image
+            allow_stretch: True
+            keep_ratio: False
+    
+    MDLabel:
+        text: 'NeuroNex'
+        font_style: 'Subtitle1'
+        italic: True  # Italicize the text 
+        bold: True
+        font_size: 60
+        halign: 'left'
+        theme_text_color: "Custom"
+        text_color: "#FFFFFF"
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": .5, "top": 0.90}  # Position at the top of the page
+    MDCard:
+        size_hint: None,None
+        size: 500,90
+        pos_hint: {"right": 0.85, "top": 0.75}  # Position at the top right of the page
+        padding: 30
+        spacing: 30
+        orientation: 'horizontal'  # Set orientation to horizontal
+        # Adding item to the card
+        background_color: 0, 0, 0, 0  # Transparent background
+        MDLabel:
+            text: "Experience a new era of AI - enhanced Learning"
+            bold: True
+            text_color: 1, 1, 1, 1  # Black color
+            halign: 'left'
+            font_size: 20
+            size_hint_y: None
+            height: self.texture_size[1]
+            width: self.texture_size[0]  # Set width based on the text content
+    MDCard:
+        size_hint: None,None
+        size: 500,200
+        pos_hint: {"right": 0.85, "top": 0.63}  # Position at the top right of the page
+        padding: 40
+        spacing: 30
+        orientation: 'horizontal'  # Set orientation to horizontal
+        # Adding item to the card
+        background_color: 0, 0, 0, 0  # Transparent background
+        MDLabel:
+            text: "Step into a journey of enriched learning, designed for students with unique needs! Our app offers captivating interactive activities and personalized pathways, fostering inclusivity and engagement in the world of education!"
+            text_color: 1, 1, 1, 1  # Black color
+            halign: 'left'  # Right alignment
+            font_size: 20
+            size_hint_y: None
+            height: self.texture_size[1]
+            width: self.texture_size[0]  # Set width based on the text content  
+    MDRoundFlatButton:
+        text: "Play Now"
+        size_hint: (None, None)
+        pos_hint: {"right": 0.80, "top": 0.30}  # Position at the top right of the page   
+        padding: dp(80), dp(16), dp(80), dp(16)  # Add padding around the text (left, top, right, bottom)
+        font_size: 20
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1  # White text color
+        md_bg_color: 0.38 , 0.24, 0.45, 1
+        line_width: 2  # Width of the border
+        line_color: 0.73, 0, 0.45, 1  # Border color (same as the button color)
+        ripple_color: 0.73, 0, 0.45,0.5  # Ripple effect color

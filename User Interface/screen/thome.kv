@@ -1,0 +1,44 @@
+<TeacherHome>:
+    FloatLayout:
+        Image:
+            source: 'image/teacher_home.jpg'  # Replace 'path_to_image_home.png' with the path to your home image
+            allow_stretch: True
+            keep_ratio: False
+    
+    MDLabel:
+        text: 'NeuroNex'
+        font_style: 'Subtitle1'
+        italic: True  # Italicize the text 
+        bold: True
+        font_size: 60
+        halign: 'left'
+        theme_text_color: "Custom"
+        text_color: "#FFFFFF"
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": .5, "top": 0.90}  # Position at the top of the page
+    
+    MDIconButton:
+        icon: "icons/add_video.png"
+        pos_hint: {"right": 0.90, "top": 0.60}  # Position at the top right of the page   
+        user_font_size: "128sp"  # Increased icon size
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1  # White text color
+        md_bg_color: 0.38 , 0.24, 0.45, 1
+        size_hint: None, None
+        size: "148dp", "148dp"  # Increased button size
+        ripple_color: 0.73, 0, 0.45,0.5  # Ripple effect color
+        on_release: app.upload_video(app.selected_file_path)  # Bind the button to the upload_video function with the selected file path
+    
+    MDIconButton:
+        icon: "icons/document.png"
+        pos_hint: {"right": 0.80, "top": 0.60}  # Position at the top right of the page   
+        user_font_size: "128sp"  # Increased icon size
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1  # White text color
+        md_bg_color: 0.38 , 0.24, 0.45, 1
+        size_hint: None, None
+        size: "148dp", "148dp"  # Increased button size
+        ripple_color: 0.73, 0, 0.45,0.5  # Ripple effect color
+        on_release: app.choose_file()
+

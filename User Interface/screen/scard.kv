@@ -1,0 +1,15 @@
+<SCardScreen>:
+
+    Button:
+        size_hint: (None, None)
+        size: (300, 300)  # Set the size of the button to 300x100 pixels
+        pos_hint: {'center_x': 0.5,'top':1.5} #the text (left, top, right, bottom)
+        background_normal: 'image/signup.jpeg'  # Path to the image for normal state
+        text:"SignUp"
+        font_size: 20
+        bold: True
+        halign: 'center'
+        valign: 'bottom'
+        color: 1, 1, 1, 1  # Red color
+        text_size: self.size  # Limit text area to the size of the button
+        on_release:app.goto_sign_up_screen()

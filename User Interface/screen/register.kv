@@ -1,0 +1,137 @@
+<SignUpScreen>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                source: 'image\signin.jpg'  # Set the path to your image file
+                size: self.width, self.height  # Set the size to match the screen size
+                pos: self.x, self.y  # Position the image at the bottom-left corner to cover the entire screen
+        MDLabel:
+            text: 'NeuroNex'
+            font_style: 'Subtitle1'
+            italic: True  # Italicize the text 
+            font_size: 60
+            halign: 'left'
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            size_hint_y: None
+            height: self.texture_size[1]
+            pos_hint: {"center_x": .5, "top": 0.90}  # Position at the top of the page
+    MDCard:
+        size_hint: None, None
+        size: 500, 900
+        pos_hint: {"center_x": .5, "center_y": .5}
+        md_bg_color: [152/255, 49/255, 203/255, 1]
+        padding: 20
+        spacing: 30
+        orientation: 'vertical'
+        MDLabel:
+            text: 'Teacher/Student Register'
+            font_style: 'Button'
+            font_size: 25
+            halign: 'center'
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextField:
+            id: username_input  # Add an ID for the username input
+            hint_text: "Username *"
+            required:True 
+            size_hint_x: None
+            width: 400
+            font_size: 20
+            theme_text_color: "Primary"
+            text_color: "#030000"
+            pos_hint: {"center_x": .5, "center_y": .3}
+            background_color: [1, 1, 1, 0]
+
+        MDTextField:
+            id: mobile_input
+            hint_text: "Mobile no: "
+            size_hint_x: None
+            width: 400
+            font_size: 25
+            theme_text_color: "Custom"
+            text_color: "#0000FF"
+            pos_hint: {"center_x": .5, "center_y": .3}
+            background_color: [1, 1, 1, 0]
+            input_filter: "int"
+            max_text_length: 10  # Ensure maximum length is 10 digits
+            on_text_validate: app.validate_mobile(self.text)
+
+
+        MDTextField:
+            id: email_input
+            hint_text: "Email_id *"
+            required:True 
+            size_hint_x: None
+            width: 400
+            font_size: 25
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            pos_hint: {"center_x": .5, "center_y": .3}
+            background_color: [1, 1, 1, 0]
+            on_text_validate: app.on_text_validate
+
+        MDLabel:
+            id: invalid_email_label
+            text: ""
+            color: 1, 0, 0, 1  # Red color for the hint text
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: 'Send OTP'
+            size_hint: None, None
+            size: 200, 50
+            pos_hint: {"center_x": .5}
+            on_press: app.send_otp()
+
+        MDTextField:
+            id: otp_input
+            hint_text: "Verification Code"
+            size_hint_x: None
+            width: 400
+            font_size: 25
+            theme_text_color: "Custom"
+            text_color: "#FFFFFF"
+            pos_hint: {"center_x": .5, "center_y": .3}
+            background_color: [1, 1, 1, 0]
+
+        Button:
+            text: 'Verify OTP'
+            size_hint: None, None
+            size: 200, 50
+            pos_hint: {"center_x": .5}
+            on_press: app.verify_otp()
+
+        
+
+        MDLabel:
+            id: otp_verification_label
+            text: ""
+            color: 1, 0, 0, 1  # Red color for the hint text
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Label:
+            id: registration_message
+            text: ""
+            color: 0, 1, 0, 1  # Green color for success message
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+            Label:
+                text: "Already have an account? [ref=Sign_in][color=#000FF]SIGN IN[/color][/ref]"
+                markup: True
+                on_ref_press: app.on_hyperlink_press(self.text)
+
+        MDRoundFlatButton:
+            text: 'SIGN UP'
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_press: app.set_password()
+        
